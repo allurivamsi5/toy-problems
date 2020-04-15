@@ -5,8 +5,8 @@ class LRUTest:
         
     def put(self, key):
         return self.lru.put(key)
-    def get(self, key):
-        return self.lru.get(key)
+    def get(self):
+        return self.lru.get()
     def get_cache(self):
         return self.lru.get_cache()
 
@@ -18,7 +18,7 @@ def main():
     Test_obj.put(3)
     Test_obj.put(4)
     Test_obj.put(5)
-    assert True == Test_obj.get(1)
+    assert 1 == Test_obj.get()
     assert [1,3,4,5] == Test_obj.get_cache()
     Test_obj.put(6)
     assert [3,4,5,6] == Test_obj.get_cache()

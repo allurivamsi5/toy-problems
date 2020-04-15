@@ -16,8 +16,8 @@ class LRU():
             else:
                 self.cache.pop(0)
                 self.cache.append(key)
-    def get(self, key):
-        return key in self.cache
+    def get(self):
+        return self.cache[0]
     def get_cache(self):
         return self.cache
 
@@ -26,7 +26,7 @@ def main():
     obj = LRU()
     obj.put(1)
     obj.put(2)
-    print(obj.get(1))
+    print(obj.get())
     obj.put(1)
     obj.put(3)
     obj.put(4)
